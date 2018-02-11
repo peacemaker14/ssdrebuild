@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid }
+import { Grid } from 'semantic-ui-react'
 import ProductCard from './ProductCard'
 
 const ProductList = (products=[]) =>

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "simple_dress",
+    "category": "dress",
+    "subcategory": "mini_dress",
+    "price": 110000,
+    "image": "simple_dress.jpg"
+  },
+]
