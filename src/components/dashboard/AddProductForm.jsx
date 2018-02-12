@@ -11,20 +11,36 @@ const dress = [
   { key: 'maxi_dress', text: 'Maxi Dress', value: 'maxi_dress' },
 ]
 
-const AddProductForm = () =>
+const AddProductForm = ({ addNewProduct=f=>f, onChange=f=>f, onFormSelect=f=>f, formState={} }) =>
 (
   <Form>
     <Form.Field>
       <label>Name</label>
-      <input/>
+      <input name='name' value={formState.name} onChange={onChange} />
     </Form.Field>
+
     <Form.Field>
       <label>Price</label>
-      <input/>
+      <input name='price' value={formState.price} onChange={onChange} />
     </Form.Field>
-    <Form.Select label='Category' options={categories} placeholder='Dress'/>
-    <Form.Select label='Sub Category' options={dress} placeholder='Mini Dress'/>
-    <Button primary>SUBMIT</Button>
+
+    <Form.Select
+      label='Category'
+      options={categories}
+      placeholder='Dress'
+      onChange={(e, {value}) => onFormSelect('category', value)} />
+
+    <Form.Select
+      label='Sub Category'
+      options={dress}
+      placeholder='Mini Dress'
+      onChange={(e, {value}) => onFormSelect('subCategory', value)} />
+
+    <Button
+      type='submit'
+      onClick={addNewProduct}>
+      SUBMIT
+    </Button>
   </Form>
 )
 
